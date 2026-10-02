@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Emulator",
+            "type": "shell",
+            "command": "powershell -ExecutionPolicy Bypass -File \"${workspaceFolder}\.vscode\start-android.ps1\"",
+            "runOptions": { "runOn": "folderOpen" },
+            "presentation": { "reveal": "silent", "panel": "dedicated" },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Debug APK",
+            "type": "shell",
+            "command": ".\gradlew.bat assembleDebug",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Install and Run on Device",
+            "type": "shell",
+            "command": ".\gradlew.bat installDebug; adb shell am start -n com.example.nothing/.MainActivity",
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": []
+        }
+    ]
+}

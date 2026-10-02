@@ -1,0 +1,5 @@
+{
+    "task.allowAutomaticTasks": "on",
+    "java.import.gradle.enabled": true,
+    "files.exclude": { "**/.gradle": true, "**/build": true }
+}
